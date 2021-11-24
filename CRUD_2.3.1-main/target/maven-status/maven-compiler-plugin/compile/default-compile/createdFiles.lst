@@ -1,0 +1,8 @@
+com\javaspringclub\repository\ProductRepository.class
+com\javaspringclub\config\HibernateConfig.class
+com\javaspringclub\entity\Product.class
+com\javaspringclub\service\ProductService.class
+com\javaspringclub\service\ProductServiceImpl.class
+com\javaspringclub\controller\AppController.class
+com\javaspringclub\config\ServletInitializer.class
+com\javaspringclub\config\WebMvcConfig.class
