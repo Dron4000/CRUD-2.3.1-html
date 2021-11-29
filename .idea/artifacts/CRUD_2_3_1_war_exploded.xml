@@ -15,14 +15,14 @@
           <element id="module-output" name="CRUD_2.3.1" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.11.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" />
@@ -48,9 +48,9 @@
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.22" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.11.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.2.11.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:2.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.12" />
@@ -87,6 +87,9 @@
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-compiler-api:2.8.4" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-compiler-manager:2.8.4" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-compiler-javac:2.8.4" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.3.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.3.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.3.6.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

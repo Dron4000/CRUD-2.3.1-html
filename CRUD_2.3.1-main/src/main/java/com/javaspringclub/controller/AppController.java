@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppController {
@@ -23,14 +22,14 @@ public class AppController {
         this.productService = productService;
     }
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String viewHomePage(Model model) {
         List<?> listProducts = productService.getAllProducts();
         model.addAttribute("listProducts", listProducts);
         return "home";
     }
 
-    @RequestMapping(value = "/new",method = RequestMethod.GET)
+    @GetMapping(value = "/new")
     public String showNewProductPage(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
@@ -38,27 +37,28 @@ public class AppController {
         return "new_product";
     }
 
-    @PostMapping (value = "/save")
+    @PostMapping(value = "/save")
     public String saveProduct(@ModelAttribute("product") Product product) {
         productService.saveProduct(product);
 
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/edit/{id}",method ={ RequestMethod.GET, RequestMethod.POST })
-    public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-        ModelAndView mav = new ModelAndView("edit_product");
+    @GetMapping(value = "/edit/{id}")
+    public String showEditProductPage(@PathVariable(name = "id") int id,Model model) {
         Product product = productService.getProductById((long) id);
-        mav.addObject("product", product);
-
-        return mav;
+        model.addAttribute("product",product);
+        return "edit_product";
     }
 
-    @RequestMapping(value = "/delete/{id}",method = {RequestMethod.GET,RequestMethod.POST})
+    @GetMapping(value = "/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") int id) {
         productService.deleteProductById((long) id);
         return "redirect:/";
     }
+
+
+
 
 
 }
