@@ -7,7 +7,7 @@ public class PasswordGenerator {
 
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-            String rawPassword = "alex";
+            String rawPassword = "100";
             String encodedPassword = bCryptPasswordEncoder.encode(rawPassword);
         System.out.println(encodedPassword);
         }

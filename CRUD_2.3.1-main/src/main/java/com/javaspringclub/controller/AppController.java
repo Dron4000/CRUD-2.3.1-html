@@ -56,6 +56,10 @@ public class AppController {
         productService.deleteProductById((long) id);
         return "redirect:/";
     }
+    @GetMapping(value = "/403")
+    String show403(){
+        return "403";
+    }
 
 
 

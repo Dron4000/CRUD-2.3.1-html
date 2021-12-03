@@ -1,29 +1,51 @@
 package com.javaspringclub.entity;
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "roles")
-public class Role {
+public class Role  implements GrantedAuthority {
 
     @Id
     @Column(name = "role_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+    @Column(name = "name")
     private String name;
 
+     @ManyToMany(mappedBy = "roles",fetch = FetchType.EAGER)
+    private Set<User> users = new HashSet<>();
+
     public Role() {
+
     }
 
-    public Role(Integer id, String name) {
+    public Role(Long id, String name) {
         this.id = id;
         this.name = name;
     }
+    public Role(Long id, String name, Set<User> users) {
+        this.id = id;
+        this.name = name;
+        this.users = users;
+    }
 
-    public Integer getId() {
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> userSet) {
+        this.users = userSet;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -33,5 +55,15 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }

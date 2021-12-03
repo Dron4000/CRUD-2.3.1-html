@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!--     xmlns:sec="http://www.w3.org/1999/xhtml">-->
 <head>
     <meta charset="utf-8"/>
     <title>Product Manager</title>
@@ -8,8 +10,15 @@
 
 <body>
 <div align="center">
+    <div sec:authorize="isAuthenticated()">
+        Welcome <b><span sec:authentication="name">Name</span></b>
+        <i><span sec:authentication="principal.authorities">Authorities</span></i>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
     <h1>Product List</h1>
-    <a href="/new">Create New Product</a>
+    <a sec:authorize="hasAnyAuthority('ADMIN,USER')" href="/new">Create New Product</a>
     <br/><br/>
     <table border="1" cellpadding="10">
         <thead>
@@ -20,8 +29,7 @@
             <th>Brand</th>
             <th>Made In</th>
             <th>Price</th>
-            <th>Actions</th>
-
+            <th sec:authorize="hasAnyAuthority('ADMIN')">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -32,8 +40,11 @@
             <td th:text="${product.brand}">Brand</td>
             <td th:text="${product.madein}">Made in</td>
             <td th:text="${product.price}">Price</td>
-            <td><a th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
-                <a th:href="@{/delete/{id}(id=${product.id})}">Delete</a></td>
+
+
+            <td sec:authorize="hasAnyAuthority('ADMIN')">
+                <a th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
+                <a sec:authorize="hasAnyAuthority('ADMIN')" th:href="@{/delete/{id}(id=${product.id})}">Delete</a></td>
 
         </tr>
         </tbody>
